@@ -81,8 +81,7 @@ async function displayMovies() {
  * @param {string} newEmail New email address of the customer
  */
 async function updateCustomerEmail(customerId, newEmail) {
-  await pool.query('UPDATE customers SET email_address = "john.doe@gmail.com" WHERE customers_id = $1', [customerId])
-  console.log(`Updated email ${customerId}`);
+  
 };
 
 /**
@@ -91,7 +90,7 @@ async function updateCustomerEmail(customerId, newEmail) {
  * @param {number} customerId ID of the customer to remove
  */
 async function removeCustomer(customerId) {
-  // TODO: Add code to remove a customer and their rental history
+  
 };
 
 /**
@@ -124,13 +123,11 @@ async function runCLI() {
       await displayMovies();
       break;
     case 'update':
-      // if (args.length !== 3) {
-        // printHelp();
-        // return;
-      // }
-      // await updateCustomerEmail(parseInt(args[1]), args[2]);
-      const emailId = parseInt(args[1], 10);
-      await updateCustomerEmail(emailId);
+      if (args.length !== 3) {
+        printHelp();
+        return;
+      }
+      await updateCustomerEmail(parseInt(args[1]), args[2]);
       break;
     case 'remove':
       if (args.length !== 2) {
