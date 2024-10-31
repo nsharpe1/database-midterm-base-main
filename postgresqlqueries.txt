@@ -1,27 +1,27 @@
 Step #1:
 
 CREATE TABLE movies (
-           movies_id SERIAL PRIMARY KEY,
-           title TEXT,
-           year TEXT,
-           genre TEXT,
-          director_name TEXT
+    movies_id SERIAL PRIMARY KEY,
+    title TEXT,
+    year TEXT,
+    genre TEXT,
+    director_name TEXT
 );
 CREATE TABLE customers (
-           customers_id SERIAL PRIMARY KEY,
-           first_name TEXT,
-           last_name TEXT,
-           email_address TEXT,
-          phone_number TEXT
+    customers_id SERIAL PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    email_address TEXT,
+    phone_number TEXT
 );
 CREATE TABLE rentals (
-            rentals_id SERIAL PRIMARY KEY,
-            person_movie_rented TEXT,
-            movie_rented TEXT,
-            date_movie_rented DATE,
-            date_movie_returned DATE,
-            movies_id INT REFERENCES movies(movies_id),
-            customers_id INT REFERENCES customers(customers_id)
+    rentals_id SERIAL PRIMARY KEY,
+    person_movie_rented TEXT,
+    movie_rented TEXT,
+    date_movie_rented DATE,
+    date_movie_returned DATE,
+    movies_id INT REFERENCES movies(movies_id),
+    customers_id INT REFERENCES customers(customers_id)
 );
 
 
@@ -29,48 +29,48 @@ CREATE TABLE rentals (
 Step #2:
 
 INSERT INTO public.movies(
-	title, year, genre, director_name)
-	VALUES ('Avengers Endgame', '2019', 'Action', 'Anthony Russo');
+	  title, year, genre, director_name)
+	  VALUES ('Avengers Endgame', '2019', 'Action', 'Anthony Russo');
 
 INSERT INTO public.movies(
-	title, year, genre, director_name)
-	VALUES ('Star Wars The Force Awakens', '2015', 'Action', 'J.J. Abrams');
+	  title, year, genre, director_name)
+	  VALUES ('Star Wars The Force Awakens', '2015', 'Action', 'J.J. Abrams');
 
 INSERT INTO public.movies(
-	title, year,  genre, director_name)
-	VALUES (''Avatar', '2009', 'Science Fiction', 'James Cameron');
+	  title, year,  genre, director_name)
+	  VALUES (''Avatar', '2009', 'Science Fiction', 'James Cameron');
 
 INSERT INTO public.movies(
-	title, year, genre, director_name)
-	VALUES ('Iron Man 2', '2010', 'Action', 'Jon Favreau');
+	  title, year, genre, director_name)
+	  VALUES ('Iron Man 2', '2010', 'Action', 'Jon Favreau');
 
 INSERT INTO public.movies(
-	title, year, genre, director_name)
-	VALUES ('Guardians of the Galaxy', '2014', 'Action', 'James Gunn');
+	  title, year, genre, director_name)
+	  VALUES ('Guardians of the Galaxy', '2014', 'Action', 'James Gunn');
 
 
 
 Step #3:
 
 INSERT INTO public.customers(
-	first_name, last_name, email_address, phone_number)
-	VALUES ('Alice', 'Johnson', 'alice.johnson@example.com', '(000) 000-0000');
+	  first_name, last_name, email_address, phone_number)
+	  VALUES ('Alice', 'Johnson', 'alice.johnson@example.com', '(000) 000-0000');
 
 INSERT INTO public.customers(
-	first_name, last_name, email_address, phone_number)
-	VALUES ('Bob', 'Smith', 'bob.smith@example.com', '(111) 111-1111');
+	  first_name, last_name, email_address, phone_number)
+	  VALUES ('Bob', 'Smith', 'bob.smith@example.com', '(111) 111-1111');
 
 INSERT INTO public.customers(
-	first_name, last_name, email_address, phone_number)
-	VALUES ('Charlie', 'Williams', 'charlie.williams@example.com', '(222) 222-2222');
+	  first_name, last_name, email_address, phone_number)
+	  VALUES ('Charlie', 'Williams', 'charlie.williams@example.com', '(222) 222-2222');
 
 INSERT INTO public.customers(
-	first_name, last_name, email_address, phone_number)
-	VALUES ('Sarah', 'Connor', 'sarah.connor@example.com', '(333) 333-3333');
+	  first_name, last_name, email_address, phone_number)
+	  VALUES ('Sarah', 'Connor', 'sarah.connor@example.com', '(333) 333-3333');
 
 INSERT INTO public.customers(
-	first_name, last_name, email_address, phone_number)
-	VALUES ('John', 'Doe', 'john.doe@example.com', '(444) 444-4444');
+	  first_name, last_name, email_address, phone_number)
+	  VALUES ('John', 'Doe', 'john.doe@example.com', '(444) 444-4444');
 
 
 
@@ -78,124 +78,124 @@ INSERT INTO public.customers(
 Step #4:
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('Alice Johnson', 'Avengers Endgame', '09-15-2024', '09-22-2024', '1', '1');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('Alice Johnson', 'Avengers Endgame', '09-15-2024', '09-22-2024', '1', '1');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('Alice Johnson', 'Star Wars The Force Awakens', '09-15-2024', '09-22-2024', '2', '1');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('Alice Johnson', 'Star Wars The Force Awakens', '09-15-2024', '09-22-2024', '2', '1');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('Bob Smith', 'Avatar', '09-16-2024', '09-23-2024', '3', '2');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('Bob Smith', 'Avatar', '09-16-2024', '09-23-2024', '3', '2');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('Bob Smith', 'Iron Man 2', '09-16-2024', '09-23-2024', '4', '2');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('Bob Smith', 'Iron Man 2', '09-16-2024', '09-23-2024', '4', '2');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('Charlie Williams', 'Guardians of the Galaxy', '09-17-2024', '09-24-2024', '5', '3');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('Charlie Williams', 'Guardians of the Galaxy', '09-17-2024', '09-24-2024', '5', '3');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('Charlie Williams', 'Avengers Endgame', '09-17-2024', '09-24-2024', '1', '3');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('Charlie Williams', 'Avengers Endgame', '09-17-2024', '09-24-2024', '1', '3');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('Sarah Connor', 'Star Wars The Force Awakens', '09-18-2024', '09-25-2024', '2', '4');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('Sarah Connor', 'Star Wars The Force Awakens', '09-18-2024', '09-25-2024', '2', '4');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('Sarah Connor', 'Avatar', '09-18-2024', '09-25-2024', '3', '4');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('Sarah Connor', 'Avatar', '09-18-2024', '09-25-2024', '3', '4');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('John Doe', 'Iron Man 2', '09-19-2024', '09-26-2024', '4', '5');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('John Doe', 'Iron Man 2', '09-19-2024', '09-26-2024', '4', '5');
 
 INSERT INTO public.rentals(
-	person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
-	VALUES ('John Doe', 'Guardians of the Galaxy', '09-19-2024', '09-26-2024', '5', '5');
+	  person_movie_rented, movie_rented, date_movie_rented, date_movie_returned, movies_id, customers_id)
+	  VALUES ('John Doe', 'Guardians of the Galaxy', '09-19-2024', '09-26-2024', '5', '5');
 
 
 
 Step #5:
 
 SELECT
-	m.movies_id,
-	m.title,
-	m.year
+	 m.movies_id,
+	 m.title,
+	 m.year
 FROM
-	rentals r
+	 rentals r
 JOIN
-	customers c ON r.customers_id = c.customers_id
+	 customers c ON r.customers_id = c.customers_id
 JOIN
-	movies m ON r.movies_id = m.movies_id
+	 movies m ON r.movies_id = m.movies_id
 WHERE 
-	c.email_address = 'charlie.williams@example.com'
+	 c.email_address = 'charlie.williams@example.com'
 
 
 
 Step #6:
 
 SELECT
-	c.customers_id,
-	c.first_name,
-	c.last_name
+	 c.customers_id,
+	 c.first_name,
+	 c.last_name
 FROM
-	rentals r
+	 rentals r
 JOIN
-	customers c ON r.customers_id = c.customers_id
+	 customers c ON r.customers_id = c.customers_id
 JOIN
-	movies m ON r.movies_id = m.movies_id
+	 movies m ON r.movies_id = m.movies_id
 WHERE
-	m.title = 'Avatar'
+	 m.title = 'Avatar'
 
 
 
 Step #7:
 
 SELECT
-               c.customers_id,
-	c.first_name,
-	c.last_name,
-	r.date_movie_rented
+     c.customers_id,
+	 c.first_name,
+	 c.last_name,
+	 r.date_movie_rented
 FROM
-	rentals r
+	 rentals r
 JOIN
-	customers c ON r.customers_id = c.customers_id
+	 customers c ON r.customers_id = c.customers_id
 JOIN
-	movies m ON r.movies_id = m.movies_id
+	 movies m ON r.movies_id = m.movies_id
 WHERE
-	m.title = 'Star Wars The Force Awakens'
+	 m.title = 'Star Wars The Force Awakens'
 
 
 
 Step #8:
 
 SELECT
-	c.first_name,
-	c.last_name,
-	r.date_movie_rented,
-	m.title
+	 c.first_name,
+	 c.last_name,
+	 r.date_movie_rented,
+	 m.title
 FROM
-	rentals r
+	 rentals r
 JOIN
-	customers c ON r.customers_id = c.customers_id
+	 customers c ON r.customers_id = c.customers_id
 JOIN
-	movies m ON r.movies_id = m.movies_id
+	 movies m ON r.movies_id = m.movies_id
 WHERE
-	m.director_name = 'Jon Favreau'
+	 m.director_name = 'Jon Favreau'
 
 
 Step #9:
 
 SELECT
-	r.movie_rented,
-	r.date_movie_rented
+	 r.movie_rented,
+	 r.date_movie_rented
 FROM
-	rentals r
+	 rentals r
 JOIN
-	customers c ON r.customers_id = c.customers_id
+	 customers c ON r.customers_id = c.customers_id
 JOIN
-	movies m ON r.movies_id = m.movies_id
+	 movies m ON r.movies_id = m.movies_id
